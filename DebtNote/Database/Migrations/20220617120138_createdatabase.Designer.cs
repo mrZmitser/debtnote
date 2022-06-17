@@ -12,7 +12,7 @@ namespace DebtNote.Database.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20220617120138_createdatabase")]
-    partial class createdatabase
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

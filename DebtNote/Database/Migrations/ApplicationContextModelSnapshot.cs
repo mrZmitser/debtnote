@@ -35,7 +35,8 @@ namespace DebtNote.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Payments");
-                });
+                }
+                );
 
             modelBuilder.Entity("DebtNote.Models.User", b =>
                 {
@@ -55,7 +56,8 @@ namespace DebtNote.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
+                }
+                );
 #pragma warning restore 612, 618
         }
     }

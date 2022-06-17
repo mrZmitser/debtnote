@@ -4,7 +4,7 @@
 
 namespace DebtNote.Database.Migrations
 {
-    public partial class createdatabase : Migration
+    public partial class CreateDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +19,8 @@ namespace DebtNote.Database.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Payments", x => x.Id);
-                });
+                }
+                );
 
             migrationBuilder.CreateTable(
                 name: "Users",
@@ -33,7 +34,8 @@ namespace DebtNote.Database.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
-                });
+                }
+                );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
