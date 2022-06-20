@@ -11,10 +11,10 @@ namespace DebtNote.Services.Implementations
         public UserService(ApplicationContext context) => _context = context;
         public List<User> GetAll() => _context.Users.ToList();
         public User GetById(int id) => _context.Set<User>().FirstOrDefault(user => user.Id == id);
-        public User CreateUser(User user)
+        public async Task<User> CreateUser(User user)
         {
-            _context.AddAsync(user);
-            _context.SaveChanges();
+            await _context.AddAsync(user);
+            await _context.SaveChangesAsync();
             return user;
         }
         public User UpdateUser(User user)
@@ -23,13 +23,13 @@ namespace DebtNote.Services.Implementations
             _context.SaveChangesAsync();
             return user;
         }
-        public void DeleteUser(int id)
+        public async Task DeleteUserAsync(int id)
         {
             var toDelete = _context.Set<User>().FirstOrDefault(user => user.Id == id);
             if (toDelete != null)
             {
                 _context.Set<User>().Remove(toDelete);
-                _context.SaveChanges();
+               await _context.SaveChangesAsync();
             }
         }
         

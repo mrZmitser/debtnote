@@ -6,8 +6,8 @@ namespace DebtNote.Services.Interfaces
     {
         public List<User> GetAll();
         public User GetById(int id);
-        public User CreateUser(User user);
+        public Task<User> CreateUser(User user);
         public User UpdateUser(User user);
-        public void DeleteUser(int id);
+        public Task DeleteUserAsync(int id);
     }
 }
